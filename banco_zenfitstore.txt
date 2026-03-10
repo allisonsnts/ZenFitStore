@@ -1,0 +1,1187 @@
+use "ZenFitStore"
+show databases
+show collections
+
+db.createCollection("Cliente")
+db.createCollection("pedidos")
+db.createCollection("Produto")
+db.categorias.insertMany([
+{
+	"_id" : ObjectId("656b9517e04622f2bfb8be1b"),
+	"nome" : "Equipamentos"
+},
+
+/* 2 createdAt:02/12/2023 17:35:32*/
+{
+	"_id" : ObjectId("656b9514e04622f2bfb8be1a"),
+	"nome" : "Acessórios"
+},
+
+/* 3 createdAt:02/12/2023 17:35:01*/
+{
+	"_id" : ObjectId("656b94f5e04622f2bfb8be19"),
+	"nome" : "Roupas de Academia"
+},
+
+/* 4 createdAt:02/12/2023 17:34:31*/
+{
+	"_id" : ObjectId("656b94d7e04622f2bfb8be18"),
+	"nome" : "Suplementos"
+}
+
+])
+-----------------------------------------------------------
+
+db.Cliente.insertMany([
+{
+	"_id" : ObjectId("656b90d5061fd41a180529ad"),
+	"NOME" : "Monica Cebola Magal",
+	"CPF" : Long("24469852003"),
+	"ENDERECO" : "Rua dos Limoeiros, 775, São Paulo",
+	"EMAIL" : "monicabandida@gmail.com",
+	"TELEFONE" : Long("119568545362"),
+	"SENHA" : "$2b$12$RxE8D4IETzA03R4b44TT9e27vB5pL5UzON7FMKP.V78x7LiFA/gCe"
+},
+
+/* 2 createdAt:27/11/2023 21:52:36*/
+{
+	"_id" : ObjectId("656539d490d298b647e6bd27"),
+	"NOME" : "Victoria Taypan Uzu",
+	"CPF" : Long("75085678801"),
+	"EMAIL" : "vic.uzu@email.com",
+	"TELEFONE" : Long("11980745621"),
+	"ENDEREÇO" : "Avenida São Paulo, 10023 - São Caetano - SP - CEP: 09290-520"
+},
+
+/* 3 createdAt:27/11/2023 21:50:47*/
+{
+	"_id" : ObjectId("6565396790d298b647e6bd26"),
+	"NOME" : "Melinda Oliveira",
+	"CPF" : Long("28958956795"),
+	"EMAIL" : "mel15420@gmail.com",
+	"TELEFONE" : Long("11975402130"),
+	"ENDEREÇO" : "Rua Parminin pecchi, 859 - São Bernado - SP - CEP: 09978-340"
+},
+
+/* 4 createdAt:27/11/2023 21:48:19*/
+{
+	"_id" : ObjectId("656538d390d298b647e6bd25"),
+	"NOME" : "Catia Landena",
+	"CPF" : Long("35685678801"),
+	"EMAIL" : "catialandena@email.com",
+	"TELEFONE" : Long("11997654771"),
+	"ENDEREÇO" : "Avenida Grande ABC, 10023 - Santo André - SP - CEP: 09290-520"
+},
+
+/* 5 createdAt:27/11/2023 21:46:31*/
+{
+	"_id" : ObjectId("6565386790d298b647e6bd24"),
+	"NOME" : "Maria Nunes",
+	"CPF" : Long("28920056795"),
+	"EMAIL" : "maria98054@gmail.com",
+	"TELEFONE" : Long("1198002596"),
+	"ENDEREÇO" : "Rua José Wiltaker, 89 - São Paulo - SP - CEP: 08275-340"
+},
+
+/* 6 createdAt:27/11/2023 21:44:48*/
+{
+	"_id" : ObjectId("6565380090d298b647e6bd23"),
+	"NOME" : "Adelia Maria Salvaghan",
+	"CPF" : Long("38766795360"),
+	"EMAIL" : "delia.salvaghan@gmail.com",
+	"TELEFONE" : Long("11952679025"),
+	"ENDEREÇO" : "Avenida Coelba, 1385 - Osasco - SP - CEP: 50855-340"
+},
+
+/* 7 createdAt:27/11/2023 21:41:49*/
+{
+	"_id" : ObjectId("6565374d90d298b647e6bd22"),
+	"NOME" : "Cleiton Wellington Alves",
+	"CPF" : Long("44056879412"),
+	"EMAIL" : "clei.alvez@gmail.com",
+	"TELEFONE" : Long("1198000963"),
+	"ENDEREÇO" : "Rua Ascendino Braga Maltez, 57 - Osasco - SP - CEP: 11054-125"
+},
+
+/* 8 createdAt:27/11/2023 21:39:35*/
+{
+	"_id" : ObjectId("656536c790d298b647e6bd21"),
+	"NOME" : "Marcelo Jose Dias",
+	"CPF" : Long("44589475604"),
+	"EMAIL" : "celodias1977@gmail.com",
+	"TELEFONE" : Long("11985478963"),
+	"ENDEREÇO" : "Rua filemon, 12 - Embu das Artes - SP - CEP: 00054-340"
+},
+
+/* 9 createdAt:27/11/2023 21:37:10*/
+{
+	"_id" : ObjectId("6565363690d298b647e6bd20"),
+	"NOME" : "Gustavo Lizz Goe",
+	"CPF" : Long("52405002074"),
+	"EMAIL" : "gu96_mil@gmail.com",
+	"TELEFONE" : Long("11980802069"),
+	"ENDEREÇO" : "Rua Ambrosia, 1004 - São Paulo - SP - CEP: 01254-340"
+},
+
+/* 10 createdAt:27/11/2023 21:34:36*/
+{
+	"_id" : ObjectId("6565359c90d298b647e6bd1f"),
+	"NOME" : "Generaldo Sousa Silva",
+	"CPF" : Long("45806980024"),
+	"EMAIL" : "generalsilva@gmail.com",
+	"TELEFONE" : Long("11988202077"),
+	"ENDEREÇO" : "Rua Chavantes, 380 - São Paulo - SP - CEP: 08275-000"
+},
+
+/* 11 createdAt:25/11/2023 22:56:32*/
+{
+	"_id" : ObjectId("6562a5d0bd08916655115f49"),
+	"NOME" : "Paulo Guardado",
+	"CPF" : Long("24696924005"),
+	"EMAIL" : "guardadao.xumbrito@email.com",
+	"TELEFONE" : Long("11958824069"),
+	"ENDEREÇO" : "Rua Alberto Becker, 66 - São Paulo - SP - CEP 04822-320"
+},
+
+/* 12 createdAt:23/11/2023 12:15:14*/
+{
+	"_id" : ObjectId("655f6c82bd08916655115f37"),
+	"NOME" : "Lucas Martins",
+	"CPF" : Long("67890123456"),
+	"EMAIL" : "lucas.martins@email.com",
+	"TELEFONE" : Long("11901234567"),
+	"ENDEREÇO" : "Rua José Ventura, 321 - São Paulo - SP - CEP 02080-040"
+},
+
+/* 13 createdAt:23/11/2023 12:15:00*/
+{
+	"_id" : ObjectId("655f6c74bd08916655115f35"),
+	"NOME" : "Isabela Costa",
+	"CPF" : Long("56789012345"),
+	"EMAIL" : "isabela.costa@email.com",
+	"TELEFONE" : Long("11987654321"),
+	"ENDEREÇO" : "Rua Guaicurus, 765 - Barueri - SP - CEP 06413-130"
+},
+
+/* 14 createdAt:23/11/2023 12:14:47*/
+{
+	"_id" : ObjectId("655f6c67bd08916655115f33"),
+	"NOME" : "Diego Pereira",
+	"CPF" : Long("89012345678"),
+	"EMAIL" : "diego.pereira@email.com",
+	"TELEFONE" : Long("11954321678"),
+	"ENDEREÇO" : "Rua do Projeto, 234 - Diadema - SP - CEP 09962-210"
+},
+
+/* 15 createdAt:23/11/2023 12:14:33*/
+{
+	"_id" : ObjectId("655f6c59bd08916655115f31"),
+	"NOME" : "Mariana Lima",
+	"CPF" : Long("23456789012"),
+	"EMAIL" : "mariana.lima@email.com",
+	"TELEFONE" : Long("11998765432"),
+	"ENDEREÇO" : "Rua Luís Teles da Silva, 867 - São Paulo - SP - CEP 08275470"
+},
+
+/* 16 createdAt:23/11/2023 12:14:07*/
+{
+	"_id" : ObjectId("655f6c3fbd08916655115f2f"),
+	"NOME" : "Rafael Santos",
+	"CPF" : Long("45678901234"),
+	"EMAIL" : "rafael.santos@email.com",
+	"TELEFONE" : Long("11901234567"),
+	"ENDEREÇO" : "Travessa da Ciência, 567 - São Paulo - SP - CEP 04334-140"
+},
+
+/* 17 createdAt:23/11/2023 12:13:49*/
+{
+	"_id" : ObjectId("655f6c2dbd08916655115f2d"),
+	"NOME" : "Camila Oliveira",
+	"CPF" : Long("78901234567"),
+	"EMAIL" : "camila.oliveira@email.com",
+	"TELEFONE" : Long("11965437890"),
+	"ENDEREÇO" : "Rua Pequias, 987 - Embu das Artes - SP - CEP 06804-420"
+},
+
+/* 18 createdAt:23/11/2023 12:13:26*/
+{
+	"_id" : ObjectId("655f6c16bd08916655115f2b"),
+	"NOME" : "Carlos Silva",
+	"CPF" : Long("32145678901"),
+	"EMAIL" : "carlos.silva@email.com",
+	"TELEFONE" : Long("11987654321"),
+	"ENDEREÇO" : "Avenida dos Estados, 123 - Santo André - SP - CEP: 09290-520"
+},
+
+/* 19 createdAt:23/11/2023 12:00:29*/
+{
+	"_id" : ObjectId("655f690dbd08916655115f26"),
+	"NOME" : "Nataelson Santinni",
+	"CPF" : Long("15802684502"),
+	"EMAIL" : "nata.elson21@gmail.com",
+	"TELEFONE" : Long("11952987663"),
+	"ENDEREÇO" : "Rua Amarelo, 123 - Osasco - SP - CEP 06266-317"
+},
+
+/* 20 createdAt:23/11/2023 12:00:29*/
+{
+	"_id" : ObjectId("655f690dbd08916655115f25"),
+	"NOME" : "Allison Santos da Silva",
+	"CPF" : Long("52805642058"),
+	"EMAIL" : "allison.santinni@gmail.com",
+	"TELEFONE" : Long("11912783996"),
+	"ENDEREÇO" : "Rua Xavier Palmerim, 250 - São Paulo - SP - CEP: 08275-340"
+}
+])
+
+-----------------------------------------------------------
+
+db.marca.insertMany([
+{
+	"_id" : ObjectId("656baecebbe008745d64f4bf"),
+	"nome" : "Intermédica"
+},
+
+/* 2 createdAt:02/12/2023 19:25:12*/
+{
+	"_id" : ObjectId("656baec8bbe008745d64f4be"),
+	"nome" : "Blackskull"
+},
+
+/* 3 createdAt:02/12/2023 19:25:00*/
+{
+	"_id" : ObjectId("656baebcbbe008745d64f4bd"),
+	"nome" : "Probiótica"
+},
+
+/* 4 createdAt:02/12/2023 19:24:45*/
+{
+	"_id" : ObjectId("656baeadbbe008745d64f4bc"),
+	"nome" : "Growth"
+},
+
+/* 5 createdAt:02/12/2023 17:34:08*/
+{
+	"_id" : ObjectId("656b94c0e04622f2bfb8be17"),
+	"nome" : "Adidas"
+},
+
+/* 6 createdAt:02/12/2023 17:33:56*/
+{
+	"_id" : ObjectId("656b94b4e04622f2bfb8be16"),
+	"nome" : "Nike"
+}
+])
+
+-----------------------------------------------------------------------
+
+
+db.pedidos.insertMany([
+{
+	"_id" : ObjectId("65694b8d90d298b647e6bd4f"),
+	"IdCliente" : ObjectId("6565396790d298b647e6bd26"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("65635b6a0999398d3b9ed121"),
+			"quantidade" : 3
+		},
+		{
+			"produto_id" : ObjectId("65635dea0999398d3b9ed124"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65634dc40999398d3b9ed119"),
+			"quantidade" : 3
+		}
+	],
+	"Total" : 801.64,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-29T16:04:06.472-03:00")
+},
+
+/* 2 createdAt:30/11/2023 23:51:36*/
+{
+	"_id" : ObjectId("65694a3890d298b647e6bd4e"),
+	"IdCliente" : ObjectId("6565396790d298b647e6bd26"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("65635b6a0999398d3b9ed121"),
+			"quantidade" : 3
+		},
+		{
+			"produto_id" : ObjectId("65635dea0999398d3b9ed124"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("65634dc40999398d3b9ed119"),
+			"quantidade" : 3
+		}
+	],
+	"Total" : 686.66,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-30T16:04:06.472-03:00")
+},
+
+/* 3 createdAt:30/11/2023 23:48:18*/
+{
+	"_id" : ObjectId("6569497290d298b647e6bd4c"),
+	"IdCliente" : ObjectId("6565396790d298b647e6bd26"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("65635b6a0999398d3b9ed121"),
+			"quantidade" : 3
+		},
+		{
+			"produto_id" : ObjectId("65635dea0999398d3b9ed124"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("65634dc40999398d3b9ed119"),
+			"quantidade" : 3
+		}
+	],
+	"Total" : 686.66,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-30T16:04:06.472-03:00")
+},
+
+/* 4 createdAt:30/11/2023 23:39:36*/
+{
+	"_id" : ObjectId("6569476890d298b647e6bd4b"),
+	"IdCliente" : ObjectId("656538d390d298b647e6bd25"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("65635c810999398d3b9ed123"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65635dea0999398d3b9ed124"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562a988bd08916655115f54"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65636c4d0999398d3b9ed12a"),
+			"quantidade" : 2
+		}
+	],
+	"Total" : 570.99,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-30T16:04:06.472-03:00")
+},
+
+/* 5 createdAt:30/11/2023 23:37:43*/
+{
+	"_id" : ObjectId("656946f790d298b647e6bd4a"),
+	"IdCliente" : ObjectId("6565386790d298b647e6bd24"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("65635c810999398d3b9ed123"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65635dea0999398d3b9ed124"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562a988bd08916655115f54"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65636c4d0999398d3b9ed12a"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 521.29,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-23T16:04:06.472-03:00")
+},
+
+/* 6 createdAt:30/11/2023 22:55:04*/
+{
+	"_id" : ObjectId("65693cf890d298b647e6bd42"),
+	"IdCliente" : ObjectId("6565374d90d298b647e6bd22"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("6562ac82bd08916655115f64"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("656364af0999398d3b9ed126"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 205,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-16T01:23:21.734-03:00")
+},
+
+/* 7 createdAt:30/11/2023 22:43:48*/
+{
+	"_id" : ObjectId("65693a5490d298b647e6bd3f"),
+	"IdCliente" : ObjectId("6565380090d298b647e6bd23"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("65635c5e0999398d3b9ed122"),
+			"quantidade" : 3
+		},
+		{
+			"produto_id" : ObjectId("65634db90999398d3b9ed118"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65635dea0999398d3b9ed124"),
+			"quantidade" : 3
+		},
+		{
+			"produto_id" : ObjectId("65636c4d0999398d3b9ed12a"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 406.5,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-26T16:04:06.472-03:00")
+},
+
+/* 8 createdAt:30/11/2023 22:37:16*/
+{
+	"_id" : ObjectId("656938cc90d298b647e6bd3e"),
+	"IdCliente" : ObjectId("656536c790d298b647e6bd21"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("65634dec0999398d3b9ed11b"),
+			"quantidade" : 3
+		},
+		{
+			"produto_id" : ObjectId("65634e170999398d3b9ed11d"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65636c4d0999398d3b9ed12a"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65634e400999398d3b9ed11f"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 359.1,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-30T19:04:06.472-03:00")
+},
+
+/* 9 createdAt:30/11/2023 22:35:13*/
+{
+	"_id" : ObjectId("6569385190d298b647e6bd3d"),
+	"IdCliente" : ObjectId("6565359c90d298b647e6bd1f"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("65634dec0999398d3b9ed11b"),
+			"quantidade" : 3
+		},
+		{
+			"produto_id" : ObjectId("65634e170999398d3b9ed11d"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65636c4d0999398d3b9ed12a"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65634e400999398d3b9ed11f"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 408.8,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-30T19:04:06.472-03:00")
+},
+
+/* 10 createdAt:30/11/2023 22:26:14*/
+{
+	"_id" : ObjectId("6569363690d298b647e6bd3c"),
+	"IdCliente" : ObjectId("655f690dbd08916655115f26"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("65634e340999398d3b9ed11e"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("65634dde0999398d3b9ed11a"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562af23bd08916655115f6b"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 234.8,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-30T14:12:12.617-03:00")
+},
+
+/* 11 createdAt:30/11/2023 22:25:32*/
+{
+	"_id" : ObjectId("6569360c90d298b647e6bd3b"),
+	"IdCliente" : ObjectId("6565363690d298b647e6bd20"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("6562ae55bd08916655115f69"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562acb2bd08916655115f66"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562af23bd08916655115f6b"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("6562ad40bd08916655115f68"),
+			"quantidade" : 2
+		}
+	],
+	"Total" : 480.5,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-30T13:59:42.837-03:00")
+},
+
+/* 12 createdAt:26/11/2023 14:12:12*/
+{
+	"_id" : ObjectId("65637c6c7401884e9a65912d"),
+	"IdCliente" : ObjectId("655f690dbd08916655115f26"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("65634e340999398d3b9ed11e"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("65634dde0999398d3b9ed11a"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562af23bd08916655115f6b"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 234.8,
+	"Status" : "Recusado",
+	"Data" : ISODate("2023-11-26T14:12:12.617-03:00")
+},
+
+/* 13 createdAt:26/11/2023 14:04:06*/
+{
+	"_id" : ObjectId("65637a867401884e9a65912c"),
+	"IdCliente" : ObjectId("6562a5d0bd08916655115f49"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("65634dec0999398d3b9ed11b"),
+			"quantidade" : 3
+		},
+		{
+			"produto_id" : ObjectId("65634e170999398d3b9ed11d"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65634e400999398d3b9ed11f"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 309.4,
+	"Status" : "Em Processamento",
+	"Data" : ISODate("2023-11-18T14:04:06.472-03:00")
+},
+
+/* 14 createdAt:26/11/2023 14:04:06*/
+{
+	"_id" : ObjectId("65637a867401884e9a65912b"),
+	"IdCliente" : ObjectId("655f6c82bd08916655115f37"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("65635c5e0999398d3b9ed122"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65634db90999398d3b9ed118"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65635dea0999398d3b9ed124"),
+			"quantidade" : 3
+		},
+		{
+			"produto_id" : ObjectId("65636c4d0999398d3b9ed12a"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 346.6,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-25T14:04:06.472-03:00")
+},
+
+/* 15 createdAt:26/11/2023 14:04:06*/
+{
+	"_id" : ObjectId("65637a867401884e9a65912a"),
+	"IdCliente" : ObjectId("655f6c74bd08916655115f35"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("65634dec0999398d3b9ed11b"),
+			"quantidade" : 4
+		},
+		{
+			"produto_id" : ObjectId("65634d850999398d3b9ed117"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65634e170999398d3b9ed11d"),
+			"quantidade" : 3
+		},
+		{
+			"produto_id" : ObjectId("6562aa60bd08916655115f5c"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 842.85,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-12T14:04:06.472-03:00")
+},
+
+/* 16 createdAt:26/11/2023 14:04:06*/
+{
+	"_id" : ObjectId("65637a867401884e9a659129"),
+	"IdCliente" : ObjectId("655f6c67bd08916655115f33"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("6562ae55bd08916655115f69"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562ad40bd08916655115f68"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("6562acb2bd08916655115f66"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("6562af23bd08916655115f6b"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("656364af0999398d3b9ed126"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 529.5,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-01T14:04:06.472-03:00")
+},
+
+/* 17 createdAt:26/11/2023 14:04:06*/
+{
+	"_id" : ObjectId("65637a867401884e9a659128"),
+	"IdCliente" : ObjectId("655f6c59bd08916655115f31"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("65634e400999398d3b9ed11f"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("65634dc40999398d3b9ed119"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("65635b6a0999398d3b9ed121"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("6562ac4dbd08916655115f62"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("656364af0999398d3b9ed126"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("65635dea0999398d3b9ed124"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 501.43,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-28T14:04:06.472-03:00")
+},
+
+/* 18 createdAt:26/11/2023 14:04:06*/
+{
+	"_id" : ObjectId("65637a867401884e9a659127"),
+	"IdCliente" : ObjectId("655f6c3fbd08916655115f2f"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("6562ac02bd08916655115f5e"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562ac2bbd08916655115f60"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562af23bd08916655115f6b"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562b11dbd08916655115f6f"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562b189bd08916655115f71"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562ac02bd08916655115f5e"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562b0b1bd08916655115f6d"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 392,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-25T14:04:06.472-03:00")
+},
+
+/* 19 createdAt:26/11/2023 13:59:42*/
+{
+	"_id" : ObjectId("6563797e7401884e9a659126"),
+	"IdCliente" : ObjectId("655f6c2dbd08916655115f2d"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("6562a9cdbd08916655115f56"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("6562a988bd08916655115f54"),
+			"quantidade" : 2
+		},
+		{
+			"produto_id" : ObjectId("6562aa2ebd08916655115f5a"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562aa60bd08916655115f5c"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 367,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-26T13:59:42.838-03:00")
+},
+
+/* 20 createdAt:26/11/2023 13:59:42*/
+{
+	"_id" : ObjectId("6563797e7401884e9a659125"),
+	"IdCliente" : ObjectId("655f6c16bd08916655115f2b"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("6562ae55bd08916655115f69"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562acb2bd08916655115f66"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562af23bd08916655115f6b"),
+			"quantidade" : 1
+		},
+		{
+			"produto_id" : ObjectId("6562ad40bd08916655115f68"),
+			"quantidade" : 1
+		}
+	],
+	"Total" : 328.5,
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-27T13:59:42.837-03:00")
+},
+
+/* 21 createdAt:26/11/2023 01:23:21*/
+{
+	"_id" : ObjectId("6562c8397401884e9a659124"),
+	"IdCliente" : ObjectId("655f690dbd08916655115f25"),
+	"ItensCarrinho" : [
+		{
+			"produto_id" : ObjectId("6562ac82bd08916655115f64"),
+			"quantidade" : 2
+		}
+	],
+	"Total" : Double("185"),
+	"Status" : "Processado",
+	"Data" : ISODate("2023-11-16T01:23:21.734-03:00")
+}
+])
+
+-----------------------------------------------------------------------------
+db.Produto.insertMany([
+{
+	"_id" : ObjectId("65636c4d0999398d3b9ed12a"),
+	"tipo" : "Suplementos",
+	"nome" : "Therma Pro Hardcore 60cps - Integralmédica ",
+	"descricao" : "Este suplemento promove um maior gasto calórico.",
+	"preco" : 49.7,
+	"estoque" : 25
+},
+
+/* 2 createdAt:26/11/2023 12:49:50*/
+{
+	"_id" : ObjectId("6563691e0999398d3b9ed129"),
+	"tipo" : "Acessórios de treino",
+	"nome" : "Cinturão de Musculação",
+	"descricao" : "Tamanho Ajustável Cinto Levantamento de Peso",
+	"preco" : 79.9,
+	"estoque" : 25
+},
+
+/* 3 createdAt:26/11/2023 12:30:55*/
+{
+	"_id" : ObjectId("656364af0999398d3b9ed126"),
+	"tipo" : "Acessórios de treino",
+	"nome" : "Garrafa De Água Squeeze",
+	"descricao" : "Garrafa De Água Plastica Motivacional - 2L",
+	"preco" : 20,
+	"estoque" : 25
+},
+
+/* 4 createdAt:26/11/2023 12:23:21*/
+{
+	"_id" : ObjectId("656362e90999398d3b9ed125"),
+	"tipo" : "Acessórios de treino",
+	"nome" : "Garrafa Inox Térmica",
+	"descricao" : "Garrafa Inox Térmica Academia Squeeze Fitness Nova - 700 ml",
+	"preco" : 56.7,
+	"estoque" : 25
+},
+
+/* 5 createdAt:26/11/2023 12:02:02*/
+{
+	"_id" : ObjectId("65635dea0999398d3b9ed124"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Conjunto Fitness Básico",
+	"descricao" : "Conjunto Fitness Básico Academia - G",
+	"preco" : 114.99,
+	"estoque" : 25
+},
+
+/* 6 createdAt:26/11/2023 11:56:01*/
+{
+	"_id" : ObjectId("65635c810999398d3b9ed123"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Calça Legging - Under Armour",
+	"descricao" : "Legging feminina para treino com tecido leve e secagem rapida - P",
+	"preco" : 108.4,
+	"estoque" : 25
+},
+
+/* 7 createdAt:26/11/2023 11:55:26*/
+{
+	"_id" : ObjectId("65635c5e0999398d3b9ed122"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Calça Legging - Under Armour",
+	"descricao" : "Legging feminina para treino com tecido leve e secagem rapida - M",
+	"preco" : 120.74,
+	"estoque" : 25
+},
+
+/* 8 createdAt:26/11/2023 11:51:22*/
+{
+	"_id" : ObjectId("65635b6a0999398d3b9ed121"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Calça Legging - Under Armour",
+	"descricao" : "Legging feminina para treino com tecido leve e secagem rapida - G",
+	"preco" : 126.74,
+	"estoque" : 25
+},
+
+/* 9 createdAt:26/11/2023 11:03:32*/
+{
+	"_id" : ObjectId("656350340999398d3b9ed120"),
+	"tipo" : "Suplementos",
+	"nome" : "Whey Protein Isolado 900g - Integralmedica",
+	"descricao" : "Suplemento proteico em pó para recuperação muscular.",
+	"preco" : 159.9,
+	"estoque" : 25
+},
+
+/* 10 createdAt:26/11/2023 10:55:12*/
+{
+	"_id" : ObjectId("65634e400999398d3b9ed11f"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Jaqueta corta-vento - Columbia",
+	"descricao" : "Jaqueta resistente ao vento para proteção durante atividades ao ar livre - G",
+	"preco" : 129.9,
+	"estoque" : 25
+},
+
+/* 11 createdAt:26/11/2023 10:55:00*/
+{
+	"_id" : ObjectId("65634e340999398d3b9ed11e"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Jaqueta corta-vento - Columbia",
+	"descricao" : "Jaqueta resistente ao vento para proteção durante atividades ao ar livre - M",
+	"preco" : 129.9,
+	"estoque" : 25
+},
+
+/* 12 createdAt:26/11/2023 10:54:31*/
+{
+	"_id" : ObjectId("65634e170999398d3b9ed11d"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Regata de treino - Reebok",
+	"descricao" : "Regata leve e confortável para treinos intensos - G",
+	"preco" : 29.9,
+	"estoque" : 25
+},
+
+/* 13 createdAt:26/11/2023 10:54:18*/
+{
+	"_id" : ObjectId("65634e0a0999398d3b9ed11c"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Regata de treino - Reebok",
+	"descricao" : "Regata leve e confortável para treinos intensos - M",
+	"preco" : 29.9,
+	"estoque" : 25
+},
+
+/* 14 createdAt:26/11/2023 10:53:48*/
+{
+	"_id" : ObjectId("65634dec0999398d3b9ed11b"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Shorts de compressão - Puma",
+	"descricao" : "Shorts ajustados que proporcionam suporte muscular - G",
+	"preco" : 39.9,
+	"estoque" : 25
+},
+
+/* 15 createdAt:26/11/2023 10:53:34*/
+{
+	"_id" : ObjectId("65634dde0999398d3b9ed11a"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Shorts de compressão - Puma",
+	"descricao" : "Shorts ajustados que proporcionam suporte muscular - M",
+	"preco" : 39.9,
+	"estoque" : 25
+},
+
+/* 16 createdAt:26/11/2023 10:53:08*/
+{
+	"_id" : ObjectId("65634dc40999398d3b9ed119"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Top esportivo - Under Armour",
+	"descricao" : "Top de suporte para práticas esportivas de impacto - G",
+	"preco" : 59.9,
+	"estoque" : 25
+},
+
+/* 17 createdAt:26/11/2023 10:52:57*/
+{
+	"_id" : ObjectId("65634db90999398d3b9ed118"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Top esportivo - Under Armour",
+	"descricao" : "Top de suporte para práticas esportivas de impacto - M",
+	"preco" : 59.9,
+	"estoque" : 25
+},
+
+/* 18 createdAt:26/11/2023 10:52:05*/
+{
+	"_id" : ObjectId("65634d850999398d3b9ed117"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Camiseta Dry-Fit Adidas",
+	"descricao" : "Camiseta de tecido tecnológico que absorve o suor - G",
+	"preco" : 49.9,
+	"estoque" : 25
+},
+
+/* 19 createdAt:26/11/2023 10:51:51*/
+{
+	"_id" : ObjectId("65634d770999398d3b9ed116"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Camiseta Dry-Fit Adidas",
+	"descricao" : "Camiseta de tecido tecnológico que absorve o suor - M",
+	"preco" : 49.9,
+	"estoque" : 25
+},
+
+/* 20 createdAt:26/11/2023 10:51:33*/
+{
+	"_id" : ObjectId("65634d650999398d3b9ed115"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Camiseta Dry-Fit Adidas",
+	"descricao" : "Camiseta de tecido tecnológico que absorve o suor - P",
+	"preco" : 49.9,
+	"estoque" : 25
+},
+
+/* 21 createdAt:25/11/2023 23:46:33*/
+{
+	"_id" : ObjectId("6562b189bd08916655115f71"),
+	"tipo" : "Equipamentos",
+	"nome" : "Barra - Vollo",
+	"descricao" : "Barra de metal utilizada para exercícios de levantamento de peso.",
+	"preco" : 129.9,
+	"estoque" : 25
+},
+
+/* 22 createdAt:25/11/2023 23:44:45*/
+{
+	"_id" : ObjectId("6562b11dbd08916655115f6f"),
+	"tipo" : "Equipamentos",
+	"nome" : "Halteres - Vollo",
+	"descricao" : "Pares de pesos utilizados para exercícios de fortalecimento muscular.",
+	"preco" : 64.9,
+	"estoque" : 25
+},
+
+/* 23 createdAt:25/11/2023 23:42:57*/
+{
+	"_id" : ObjectId("6562b0b1bd08916655115f6d"),
+	"tipo" : "Equipamentos",
+	"nome" : "Cochonete - Acte Sports",
+	"descricao" : "Tapete acolchoado para exercícios no solo.",
+	"preco" : 49.9,
+	"estoque" : 25
+},
+
+/* 24 createdAt:25/11/2023 23:36:19*/
+{
+	"_id" : ObjectId("6562af23bd08916655115f6b"),
+	"tipo" : "Suplementos",
+	"nome" : "Pré-treino BOPE 300g - Black Skull",
+	"descricao" : "Suplemento energético para melhorar o desempenho durante os treinos.",
+	"preco" : 65,
+	"estoque" : 25
+},
+
+/* 25 createdAt:25/11/2023 23:32:53*/
+{
+	"_id" : ObjectId("6562ae55bd08916655115f69"),
+	"tipo" : "Suplementos",
+	"nome" : "Whey Protein Isolado 1,8KG - Integralmedica",
+	"descricao" : "Suplemento proteico em pó para recuperação muscular.",
+	"preco" : 147.5,
+	"estoque" : 25
+},
+
+/* 26 createdAt:25/11/2023 23:28:16*/
+{
+	"_id" : ObjectId("6562ad40bd08916655115f68"),
+	"tipo" : "Suplementos",
+	"nome" : "Creatina 250g - Probiótica",
+	"descricao" : "Suplemento para aumentar a força e a performance nos treinos.",
+	"preco" : 87,
+	"estoque" : 25
+},
+
+/* 27 createdAt:25/11/2023 23:25:54*/
+{
+	"_id" : ObjectId("6562acb2bd08916655115f66"),
+	"tipo" : "Suplementos",
+	"nome" : "BCAA 60cps - Integralmedica",
+	"descricao" : "Suplemento de aminoácidos essenciais para auxiliar na recuperação muscular.",
+	"preco" : Double("29"),
+	"estoque" : 25
+},
+
+/* 28 createdAt:25/11/2023 23:25:06*/
+{
+	"_id" : ObjectId("6562ac82bd08916655115f64"),
+	"tipo" : "Suplementos",
+	"nome" : "Whey Protein Concentrado 900g - Integralmedica",
+	"descricao" : "Suplemento proteico em pó para recuperação muscular.",
+	"preco" : 92.5,
+	"estoque" : 25
+},
+
+/* 29 createdAt:25/11/2023 23:24:13*/
+{
+	"_id" : ObjectId("6562ac4dbd08916655115f62"),
+	"tipo" : "Acessórios de treino",
+	"nome" : "Luvas para crossfit - Harbinger",
+	"descricao" : "Luvas antiderrapantes para melhor aderência durante os exercícios de crossfit.",
+	"preco" : 49.9,
+	"estoque" : 25
+},
+
+/* 30 createdAt:25/11/2023 23:23:39*/
+{
+	"_id" : ObjectId("6562ac2bbd08916655115f60"),
+	"tipo" : "Acessórios de treino",
+	"nome" : "Faixa elástica de resistência - Liveup Sports",
+	"descricao" : "Faixa elástica usada para exercícios de resistência.",
+	"preco" : 24.9,
+	"estoque" : 25
+},
+
+/* 31 createdAt:25/11/2023 23:22:58*/
+{
+	"_id" : ObjectId("6562ac02bd08916655115f5e"),
+	"tipo" : "Acessórios de treino",
+	"nome" : "Corda de pular - Speed Rope",
+	"descricao" : "Corda ajustável para exercícios aeróbicos de pulo.",
+	"preco" : 19.9,
+	"estoque" : 25
+},
+
+/* 32 createdAt:25/11/2023 23:16:00*/
+{
+	"_id" : ObjectId("6562aa60bd08916655115f5c"),
+	"tipo" : "Acessórios de treino",
+	"nome" : "Luvas para musculação - Everlast",
+	"descricao" : "Luvas acolchoadas para proteger as mãos durante o levantamento de pesos.\n",
+	"preco" : 37.5,
+	"estoque" : 25
+},
+
+/* 33 createdAt:25/11/2023 23:15:10*/
+{
+	"_id" : ObjectId("6562aa2ebd08916655115f5a"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Jaqueta corta-vento - Columbia",
+	"descricao" : "Jaqueta resistente ao vento para proteção durante atividades ao ar livre - P",
+	"preco" : 129.9,
+	"estoque" : 25
+},
+
+/* 34 createdAt:25/11/2023 23:14:23*/
+{
+	"_id" : ObjectId("6562a9ffbd08916655115f58"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Regata de treino - Reebok",
+	"descricao" : "Regata leve e confortável para treinos intensos - P",
+	"preco" : 29.9,
+	"estoque" : 25
+},
+
+/* 35 createdAt:25/11/2023 23:13:33*/
+{
+	"_id" : ObjectId("6562a9cdbd08916655115f56"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Shorts de compressão - Puma",
+	"descricao" : "Shorts ajustados que proporcionam suporte muscular - P",
+	"preco" : 39.9,
+	"estoque" : 25
+},
+
+/* 36 createdAt:25/11/2023 23:12:24*/
+{
+	"_id" : ObjectId("6562a988bd08916655115f54"),
+	"tipo" : "Roupas de academia",
+	"nome" : "Top esportivo - Under Armour",
+	"descricao" : "Top de suporte para práticas esportivas de impacto - P",
+	"preco" : 59.9,
+	"estoque" : 25
+}
+])
