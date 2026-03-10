@@ -1,4 +1,4 @@
-🏋️ ZenFitStore - Banco de Dados NoSQL
+# 🏋️ ZenFitStore - Banco de Dados NoSQL
 
 Projeto de modelagem e implementação de um **banco de dados NoSQL utilizando MongoDB** para um e-commerce fictício de produtos fitness chamado **ZenFitStore**.
 
@@ -6,11 +6,11 @@ O objetivo do projeto é simular a estrutura de dados de uma loja virtual que co
 
 ---
 
-📂 Estrutura do Banco de Dados
+# 📂 Estrutura do Banco de Dados
 
-O banco de dados ZenFitStore é composto pelas seguintes coleções:
+O banco de dados **ZenFitStore** é composto pelas seguintes coleções:
 
-👤 Cliente
+### 👤 Cliente
 Armazena as informações dos clientes cadastrados na plataforma.
 
 Campos principais:
@@ -23,7 +23,7 @@ Campos principais:
 
 ---
 
-🛍️ Produto
+### 🛍️ Produto
 Contém os produtos disponíveis na loja.
 
 Campos principais:
@@ -42,7 +42,7 @@ Exemplos de produtos:
 
 ---
 
-📦 Pedidos
+### 📦 Pedidos
 Armazena os pedidos realizados pelos clientes.
 
 Campos principais:
@@ -60,7 +60,7 @@ Status possíveis:
 
 ---
 
-🏷️ Categorias
+### 🏷️ Categorias
 Define as categorias dos produtos da loja.
 
 Exemplos:
@@ -71,7 +71,7 @@ Exemplos:
 
 ---
 
-🏢 Marca
+### 🏢 Marca
 Armazena as marcas dos produtos disponíveis.
 
 Exemplos:
@@ -84,7 +84,7 @@ Exemplos:
 
 ---
 
-⚙️ Tecnologias Utilizadas
+# ⚙️ Tecnologias Utilizadas
 
 - **MongoDB**
 - **NoSQL**
@@ -92,7 +92,7 @@ Exemplos:
 
 ---
 
-🎯 Objetivo do Projeto
+# 🎯 Objetivo do Projeto
 
 Este projeto foi desenvolvido para praticar conceitos importantes de **Banco de Dados NoSQL**, incluindo:
 
@@ -104,7 +104,7 @@ Este projeto foi desenvolvido para praticar conceitos importantes de **Banco de 
 
 ---
 
-🚀 Como Utilizar
+# 🚀 Como Utilizar
 
 1. Abra o **MongoDB Shell**
 2. Execute o script do projeto
@@ -112,13 +112,13 @@ Este projeto foi desenvolvido para praticar conceitos importantes de **Banco de 
 
 ---
 
-📚 Projeto Acadêmico
+# 📚 Projeto Acadêmico
 
 Projeto desenvolvido para fins **educacionais**, com o objetivo de praticar **modelagem de banco de dados e manipulação de dados em MongoDB**.
 
 ---
 
-👨‍💻 Autores
+# 👨‍💻 Autor
 
 **Allison Santos**
 
